@@ -10,7 +10,16 @@ script:
   - docker run jparkkennaby/react-rest npm test -- --coverage
 
 after_success:
-    - docker build -t jparkkennaby/complex-client ./client
-    - docker build -t jparkkennaby/complex-nginx ./nginx
-    - docker build -t jparkkennaby/complex-server ./server
-    - docker build -t jparkkennaby/complex-worker ./worker    
+  - docker build -t jparkkennaby/complex-client ./client
+  - docker build -t jparkkennaby/complex-nginx ./nginx
+  - docker build -t jparkkennaby/complex-server ./server
+  - docker build -t jparkkennaby/complex-worker ./worker
+
+# login to docker cli
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+
+# push images to docker hub
+  - docker push jparkkennaby/complex-client
+  - docker push jparkkennaby/complex-nginx
+  - docker push jparkkennaby/complex-server
+  - docker push jparkkennaby/complex-worker
