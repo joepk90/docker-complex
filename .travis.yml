@@ -1,0 +1,16 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t jparkkennaby/react-rest -f ./client/Dockerfile.dev ./client
+
+script:
+# using --coverage so the testing process eventually exits
+  - docker run jparkkennaby/react-rest npm test -- --coverage
+
+after_success:
+    - docker build -t jparkkennaby/complex-client ./client
+    - docker build -t jparkkennaby/complex-nginx ./nginx
+    - docker build -t jparkkennaby/complex-server ./server
+    - docker build -t jparkkennaby/complex-worker ./worker    
