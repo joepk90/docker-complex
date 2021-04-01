@@ -7,7 +7,7 @@ services:
   api:
     build:
       dockerfile: Dockerfile.dev
-      context: ./server/
+      context: ./server
     volumes:
       - /app/node_modules
       - ./server:/app
@@ -22,14 +22,14 @@ services:
   client:
     build:
       dockerfile: Dockerfile.dev
-      context: ./client/
+      context: ./client
     volumes:
       - /app/node_modules
       - ./client:/app
   worker:
     build:
       dockerfile: Dockerfile.dev
-      context: ./worker/
+      context: ./worker
     volumes:
       - /app/node_modules
       - ./worker:/app
