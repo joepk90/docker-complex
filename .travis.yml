@@ -23,3 +23,15 @@ after_success:
   - docker push jparkkennaby/complex-nginx
   - docker push jparkkennaby/complex-server
   - docker push jparkkennaby/complex-worker
+
+deploy:
+  provider: elasticbeanstalk
+  region: us-east-2
+  app: docker-complex
+  env: Dockercomplex-env
+  bucket_name: elasticbeanstalk-us-east-2-148635468648
+  bucket_path: docker-complex
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
