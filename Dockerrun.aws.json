@@ -4,7 +4,20 @@
         {
             "name": "client",
             "image": "jparkkennaby/complex-client",
-            "hostname": "client"
+            "hostname": "client",
+            "essential": false
+        },
+        {
+            "name": "server",
+            "image": "jparkkennaby/complex-server",
+            "hostname": "api",
+            "essential": false
+        },
+        {
+            "name": "worker",
+            "image": "jparkkennaby/complex-worker",
+            "hostname": "worker",
+            "essential": false
         }
     ]
 }
