@@ -1,6 +1,6 @@
 # complex docker project
 
-This project is currently setup to work run on AWS Elastic Beanstore
+This project is being configured to work with AWS Kubernetes
 
 This project calculates the fibonacci sequence based on index. It uses the following services:
 - Postgres
