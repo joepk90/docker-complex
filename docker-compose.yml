@@ -1,7 +1,7 @@
 version: '3'
 services:
   postgres:
-    image: 'postgres:latest'
+    image: 'postgres:9.6.7'
   redis:
     image: "redis:latest"
   nginx:
