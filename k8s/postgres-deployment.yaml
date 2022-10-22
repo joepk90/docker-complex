@@ -25,3 +25,9 @@ spec:
             - name: postgres-storage # identical
               mountPath: /var/lib/postgresql/data # default postgres storage location 
               subPath: postgres # save data to sub directory within persistent volume (specific postgres requirement)
+          env: 
+          - name: PGPASSWORD
+            valueFrom:
+                secretKeyRef: # environment variable set using $ kubectl create secret generic ...
+                  name: pgpassword
+                  key: PGPASSWORD

@@ -30,3 +30,8 @@ spec:
               value: 5432 # default postgres port
             - name: PGDATABASE
               value: postgres # default postgres database
+            - name: PGPASSWORD
+              valueFrom:
+                secretKeyRef: # environment variable set using $ kubectl create secret generic ...
+                  name: pgpassword
+                  key: PGPASSWORD
