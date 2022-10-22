@@ -7,17 +7,11 @@ This project calculates the fibonacci sequence based on index. It uses the follo
 - Redis
 - Worker
 - ExpressJS
-- Nginx
 - React
-
 
 ### React (client)
 Docker Image: jparkkennaby/complex-client
 Front End service is used to display a form and the fibonacci sequence calculations already performed
-
-### Nginx
-Docker Image: jparkkennaby/complex-nginx
-Used to control http requests from the React front end
 
 ### ExpressJS (server)
 Docker Image: jparkkennaby/complex-server
@@ -36,3 +30,8 @@ Database in use to persist data
 
 
 
+## Depreciated Services (used for AWS Elastic Beanstork Configuration)
+
+### Nginx
+Docker Image: jparkkennaby/complex-nginx
+Used to control http requests from the React front end
