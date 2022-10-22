@@ -17,3 +17,16 @@ spec:
           image: jparkkennaby/complex-server
           ports:
             - containerPort: 5000
+          env:
+            - name: REDIS_HOST
+              value: redis-cluster-ip-service # (See redis-cluster-id-service.yaml)
+            - name: REDIS_PORT
+              value: 6479 # (See redis-cluster-id-service.yaml)
+            - name: PGUSER
+              value: postgres # default postgres user
+            - name: PGHOST
+              value: postgres-cluster-ip-service # (See postgres-cluster-ip-service.yaml)
+            - name: PGPORT
+              value: 5432 # default postgres port
+            - name: PGDATABASE
+              value: postgres # default postgres database
