@@ -8,3 +8,5 @@ spec:
   resources:
     requests:
       storage: 2Gi
+  # storageClassName: configuration for persistance vomume:
+  # https://kubernetes.io/docs/concepts/storage/storage-classes/#provisioner
