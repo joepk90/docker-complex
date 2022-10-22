@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: redis-cluster-ip-service
+  name: redis-cluster-ip-service # can be used as the hostname (within a cluster)
 spec:
   type: ClusterIP
   selector: 

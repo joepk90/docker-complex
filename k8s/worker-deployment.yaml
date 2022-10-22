@@ -15,3 +15,8 @@ spec:
       containers:
         - name: worker
           image: jparkkennaby/complex-worker
+          env:
+            - name: REDIS_HOST
+              value: redis-cluster-ip-service # (See redis-cluster-id-service.yaml)
+            - name: REDIS_PORT
+              value: 6479 # (See redis-cluster-id-service.yaml)
