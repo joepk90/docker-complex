@@ -21,7 +21,7 @@ spec:
             - name: REDIS_HOST
               value: redis-cluster-ip-service # (See redis-cluster-id-service.yaml)
             - name: REDIS_PORT
-              value: '6479' # (See redis-cluster-id-service.yaml)
+              value: '6379' # (See redis-cluster-id-service.yaml)
             - name: PGUSER
               value: postgres # default postgres user
             - name: PGHOST
