@@ -1,0 +1,8 @@
+sudo: required
+services: 
+  - docker
+before_install:
+  - curl https://sdk.cloud.google.com | bash > /dev/null; # download google cloud sdk
+  - source $HOME/google-cloud-sdk/path.bash.inc # install  google cloud sdk
+  - gcloud components update kubectl
+  - gloud auth activate-service-account --key-file service-account.json
