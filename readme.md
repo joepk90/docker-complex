@@ -37,3 +37,5 @@ Docker Image: jparkkennaby/complex-nginx
 Used to control http requests from the React front end
 
 
+## TODO:
+- postgres service not working in PROD (Google Cloud Kubernetes). The service is running and requests to the service look correct. It looks like there is something wrong with the db configutation causing requests to /api/values/current to fail.
