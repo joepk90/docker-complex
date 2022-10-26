@@ -16,7 +16,7 @@ before_install:
   - gcloud config set compute/zone us-central1-c
   - gcloud container clusters get-credentials cluster-1 # cluster 1 was set in google cloud console
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker build -t jparkkennaby/react-test -f ./client/Dockerfile.dev .client
+  - docker build -t jparkkennaby/react-test -f ./client/Dockerfile.dev ./client
 
 script:
   - docker run jparkkennaby/react-test npm test -- --coverage
