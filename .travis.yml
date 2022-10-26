@@ -18,11 +18,11 @@ before_install:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker build -t jparkkennaby/react-test -f ./client/Dockerfile.dev .client
 
-  script:
-    - docker run jparkkennaby/react-test npm test -- --coverage
+script:
+  - docker run jparkkennaby/react-test npm test -- --coverage
 
-  deploy:
-    provider: script
-    script: bash ./deploy.sh
-    on:
-      branch: master
+deploy:
+  provider: script
+  script: bash ./deploy.sh
+  on:
+    branch: master
