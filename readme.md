@@ -29,9 +29,11 @@ Database in use to persist data
 
 
 
+## Development Services:
 
-## Depreciated Services (used for AWS Elastic Beanstork Configuration)
-
-### Nginx
+### Nginx:
+#### Used for docker-compose.yml route navigation (And the previous AWS Elastic Beanstork Configuration)
 Docker Image: jparkkennaby/complex-nginx
 Used to control http requests from the React front end
+
+
