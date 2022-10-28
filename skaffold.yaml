@@ -1,0 +1,14 @@
+apiVersion: skaffold/vwbeta2
+kind: Config
+build:
+  local:
+    push: false # everytime skaffold builds an image locally, don't push it
+  artifacts: 
+    - image: jparkkennaby/complex-client
+      context: client
+      docker: 
+        dockerfile: Dockerfile.dev
+      sync: # skaffold - mode 2: syncing files - # anytime skaffold see's a spectific type of file change, sync it to the file in the container
+        '**/*js': . 
+        '**/*css': . 
+        '**/*html': . 
