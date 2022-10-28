@@ -12,6 +12,19 @@ build:
         '**/*js': . 
         '**/*css': . 
         '**/*html': . 
+    - image: jparkkennaby/complex-server
+      context: server
+      docker: 
+        dockerfile: Dockerfile.dev
+        sync:
+          '**/*js': .
+    - image: jparkkennaby/complex-worker
+      context: worker
+      docker: 
+        dockerfile: Dockerfile.dev
+        sync:
+          '**/*js': .
+      
 deploy: # automatically attempts to apply server at start up ($ skaffold dev), and delete at shit down (ctr + c)
   kubectl:
     manifests:
