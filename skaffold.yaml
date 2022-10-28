@@ -12,7 +12,12 @@ build:
         '**/*js': . 
         '**/*css': . 
         '**/*html': . 
-deploy:
+deploy: # automatically attempts to apply server at start up ($ skaffold dev), and delete at shit down (ctr + c)
   kubectl:
     manifests:
       - k8s/client-deployment.yaml 
+      - k8s/server-deployment.yaml
+      - k8s/worker-deployment.yaml
+      - k8s/server-cluster-ip-service.yaml
+      - k8s/client-cluster-ip-service.yaml
+    # don't add services with persistant data (databases). skaffold will delete them
