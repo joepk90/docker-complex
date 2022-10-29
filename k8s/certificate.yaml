@@ -11,11 +11,4 @@ spec:
   dnsNames: # list of all domains associated with the certifiate
     - kubernetes.joepk.co.uk
     - www.kubernetes.joepk.co.uk
-  acme:
-    config:
-      - http01:
-          ingressClass: nginx
-        domains: # domains for letsencrypt verification
-          - kubernetes.joepk.co.uk
-          - www.kubernetes.joepk.co.uk
         
