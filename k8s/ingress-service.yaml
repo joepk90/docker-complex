@@ -15,7 +15,25 @@ spec:
         - www.kubernetes.joepk.co.uk
       secretName: kubernetes-joepk-co-uk # see certificate.yaml file
   rules:
-    - http:
+    - host: kubernetes.joepk.co.uk
+      http:
+        paths:
+          - path: /?(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: client-cluster-ip-service # see client-cluster-ip-service.yaml
+                port:
+                  number: 3000
+          - path: /api/?(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: server-cluster-ip-service # see server-cluster-ip-service.yaml
+                port:
+                  number: 5000
+    - host: www.kubernetes.joepk.co.uk
+      http:
         paths:
           - path: /?(.*)
             pathType: Prefix
