@@ -31,6 +31,19 @@ Database in use to persist data
 
 ## Development Services:
 
+## Skaffold can be used for local developent
+Skaffold is similar to minikube, although it can be used to handle live updates (sync of files). See the skaffold.yaml file
+
+```
+# run skaffold
+$ skaffold dev
+
+# stop skaffold
+$ ctr + c
+```
+
+Note: skaffold.yaml file untested (I never installed skaffold to test)
+
 ### Nginx:
 #### Used for docker-compose.yml route navigation (And the previous AWS Elastic Beanstork Configuration)
 Docker Image: jparkkennaby/complex-nginx
