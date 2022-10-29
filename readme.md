@@ -51,4 +51,12 @@ Used to control http requests from the React front end
 
 
 ## TODO:
+- minikube no longer working since letsencrypt changes - set up skaffold properly (skaffold init). Ensure:
+    - dev deployments are not active
+    - sync is enabled
 - postgres service not working in PROD (Google Cloud Kubernetes). The service is running and requests to the service look correct. It looks like there is something wrong with the db configutation causing requests to /api/values/current to fail.
+
+
+### Skaffold not running:
+potential issue with running kubernetes (required) on OSX MOjave
+https://github.com/docker/for-mac/issues/3327
